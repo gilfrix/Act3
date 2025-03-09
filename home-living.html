@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SHOPPERZ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: #007bff !important;
+        }
+        .navbar-brand, .nav-link, .btn-outline-light {
+            color: white !important;
+        }
+        .search-bar {
+            max-width: 500px;
+        }
+        .category-section {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+        .category-list li {
+            margin-bottom: 10px;
+        }
+        .category-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            gap: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .category-btn:hover {
+            background-color: #0056b3;
+        }
+        .category-icon {
+            font-size: 18px;
+            color: white;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 10px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+        .carousel-item img {
+    width: 300px; 
+    height: 600px; 
+    object-fit: cover; 
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">SHOPPERZ</a>
+            <form class="d-flex mx-auto search-bar w-50">
+                <input class="form-control me-2" type="search" placeholder="Search for products..." aria-label="Search">
+                <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+            <div class="d-flex">
+                <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="category-section">
+                    <ul class="category-list">
+                        <li><a href="electronics.html" class="category-btn"><i class="bi bi-phone category-icon"></i> Electronics</a></li>
+                        <li><a href="home-living.html" class="category-btn"><i class="bi bi-house-door category-icon"></i> Home & Living</a></li>
+                        <li><a href="sports.html" class="category-btn"><i class="bi bi-trophy category-icon"></i> Sports</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-10">
+                <div class="bg-light p-5 rounded text-center">
+                    <h1>Welcome to SHOPPERZ</h1>
+                    <p>Find the best deals on your favorite products!</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="keyboard.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="shoes.avif" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="pillow.webp" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="lamp.jfif" class="d-block w-100" alt="...">
+                      </div> 
+                      <div class="carousel-item">
+                        <img src="dumbbell.jpg" class="d-block w-100" alt="...">
+                      </div>   
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                <div class="row mt-3">
+                    <script>
+                        const products = [
+                            { name: "Electric Kettle", price: "₱1,499", rating: "4.7", img: "kettle.jfif" },
+                            { name: "LED Desk Lamp", price: "₱699", rating: "4.2", img: "lamp.jfif" },
+                            { name: "Portable Blender", price: "₱1,199", rating: "4.6", img: "blender.jpg" },
+                            { name: "Air Purifier", price: "₱2,499", rating: "4.8", img: "purifier.avif" },
+                            { name: "Memory Foam Pillow", price: "₱899", rating: "4.5", img: "pillow.webp" },
+                            { name: "Essential Oil Diffuser", price: "₱1,299", rating: "4.7", img: "diffuser.jpg" },
+                            { name: "Cordless Vacuum Cleaner", price: "₱3,299", rating: "4.6", img: "vacuum.jpg" },
+                            { name: "Smart LED Light Bulb", price: "₱499", rating: "4.4", img: "smartbulb.jpg" }
+                        ];
+                    
+                        document.write(products.map(product => `
+                            <div class="col-md-3 mb-4">
+                                <div class="card">
+                                    <img src="${product.img}" class="card-img-top" alt="${product.name}">
+                                    <div class="card-body">
+                                        <h6 class="card-title">${product.name}</h6>
+                                        <p class="text-danger fw-bold">${product.price}</p>
+                                        <p class="text-warning"><i class="bi bi-star-fill"></i> ${product.rating}</p>
+                                        <button class="btn btn-sm btn-primary w-100">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join(''));
+                    </script>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="text-center text-white p-4" style="background-color: #007bff;">
+        © 2025 Copyright:
+        <a class="text-white" href="index.html">https://SHOPPERZ.com</a>
+      </div>
+      
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
